@@ -1,0 +1,29 @@
+<h1>Interactive World Map</h1>
+<p>Click on a country to reveal its data.</p>
+
+<div class="layout">
+  <!-- Column 1 -->
+  <div class="left-column">
+
+    <!--Static image with source notee-->
+    <picture>
+        <img src="assets/StaticWorldMap.gif" alt="World Map" class="static-map" style="width: 100%">        
+        <figcaption class="list"> Source: <a href="https://worldmapswithcountries.com/wp-content/uploads/2020/08/World-Map-Labelled-With-Countries.gif" target="_blank">worldmapwith countries.com</a></figcaption>                
+    </picture><br><br>
+
+    <!-- Interactive SVG map component -->
+    <app-world-map
+      (countrySelected)="loadCountry($event)">
+    </app-world-map>
+
+  </div>
+
+  <!-- Column 2 -->
+  <div class="right-column">
+    <app-country-data
+      [country]="selectedCountry"
+      [data]="countryData">
+    </app-country-data>
+  </div>
+</div>
+

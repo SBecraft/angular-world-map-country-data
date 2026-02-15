@@ -1,1 +1,16 @@
-<p>country-data works!</p>
+<div class="country-data" *ngIf="country">
+
+  <h2>{{ country.name }}</h2>
+
+  <ul>
+    <li><strong>Capital:  </strong> {{ country.capitalCity }}</li>
+    <li><strong>Region:  </strong> {{ country.region.value }}</li>
+    <li><strong>Income Level:  </strong> {{ country.incomeLevel.value }}</li>
+
+    <!-- Your two additional properties -->
+    <li><strong>Latitude:  </strong> {{ country.latitude }}</li>
+    <li><strong>Longitude:  </strong> {{ country.longitude }}</li>
+  </ul>
+
+</div>
+
