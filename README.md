@@ -1,7 +1,13 @@
-<strong> **DO NOT DISTRIBUTE OR PUBLICLY POST SOLUTIONS TO THESE LABS. MAKE ALL FORKS OF THIS REPOSITORY WITH SOLUTION CODE PRIVATE. PLEASE REFER TO THE STUDENT CODE OF CONDUCT AND ETHICAL EXPECTATIONS FOR COLLEGE OF INFORMATION TECHNOLOGY STUDENTS FOR SPECIFICS. ** </strong>
 # WESTERN GOVERNORS UNIVERSITY 
-## D280 – JAVASCRIPT PROGRAMMING
-Welcome to JavaScript Programming! 
-For specific task instructions and requirements for this assessment, please refer to the course page.
+## D280A – JAVASCRIPT PROGRAMMING
+**Student ID**:  011607384
+## Country Information Angular Project
+This project ...
+### Project Configuration Details
+- **Angular CLI:**  21.1.4
+- **Node:**  24.13.0
+- **Package Manager:**  npm 11.8.0
+- **OS:**  win32 x64
+- **Angular:**  21.1.4
  
 
