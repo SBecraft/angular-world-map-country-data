@@ -1,29 +1,34 @@
-<h1>Interactive World Map</h1>
-<p>Click on a country to reveal its data.</p>
-
-<div class="layout">
-  <!-- Column 1 -->
-  <div class="left-column">
-
-    <!--Static image with source notee-->
-    <picture>
-        <img src="assets/StaticWorldMap.gif" alt="World Map" class="static-map" style="width: 100%">        
-        <figcaption class="list"> Source: <a href="https://worldmapswithcountries.com/wp-content/uploads/2020/08/World-Map-Labelled-With-Countries.gif" target="_blank">worldmapwithcountries.com</a></figcaption>                
-    </picture><br><br>
-
-    <!-- Interactive SVG map component -->
-    <app-world-map
-      (countrySelected)="loadCountry($event)">
-    </app-world-map>
-
-  </div>
-
-  <!-- Column 2 -->
-  <div class="right-column">
-    <app-country-data
-      [country]="selectedCountry"
-      [data]="countryData">
-    </app-country-data>
-  </div>
+<div class="page-header">
+  <h1>Interactive World Map</h1>
 </div>
 
+<div class="layout">
+  <!-- Column 1: Interactive SVG Map only -->
+  <div class="left-column">
+    <p class="map-instruction">Click on a country to view its information.</p>
+    <app-world-map (countrySelected)="loadCountry($event)"></app-world-map>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Column 2: Static reference map + Country info -->
+  <div class="right-column">
+
+    <div class="static-map-section">
+      <p class="reference-label">For Reference Only</p>
+      <img
+        src="static-world-map.gif"
+        alt="Static World Map Reference"
+        class="static-map">
+    </div>
+
+    <div class="country-info-section">
+      <app-country-data
+        [country]="selectedCountry"
+        [loading]="loading"
+        [error]="error">
+      </app-country-data>
+    </div>
+
+  </div>
+</div>
