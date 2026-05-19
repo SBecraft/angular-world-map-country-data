@@ -1,1 +1,17 @@
-<p>world-map works!</p>
+<div class="map-wrapper">
+  @if (hoveredCountry) {
+    <p class="map-label">{{ hoveredCountry }}</p>
+  }
+
+  @if (mapLoading) {
+    <div class="map-loading">Loading map...</div>
+  }
+
+  <div
+    class="map-container"
+    [innerHTML]="svgContent"
+    (click)="onMapClick($event)"
+    (mouseover)="onMapHover($event)"
+    (mouseleave)="onMapLeave()">
+  </div>
+</div>

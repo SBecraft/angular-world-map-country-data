@@ -1,23 +1,69 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
-export interface CountryInfo {
-  name: string;
-  capitalCity: string;
-  region: string;
-  incomeLevel: string;
-  population: number | null;
-  gdpPerCapita: number | null;
-}
+import { Observable } from 'rxjs';
+import { CountryInfo } from '../models/country-info.model';
 
 @Injectable({ providedIn: 'root' })
-export class WorldBankApi {
+export class WorldBankApiService {
   private http = inject(HttpClient);
-  private BASE = 'https://api.worldbank.org/v2';  
-}
+  private BASE = 'https://api.worldbank.org/v2';
 
-/**
-   * Accepts a two-letter ISO country code and returns
-   * combined country info from the World Bank API.
-   */
+  getCountryData(code: string): Observable<CountryInfo> {
+
+    // Create and return a new Observable — same pattern as your book app
+    return new Observable(observer => {
+
+      // We need to wait for all 3 API calls to finish before emitting the result.
+      // This counter tracks how many calls have completed.
+      let completedCalls = 0;
+
+      const result: CountryInfo = {
+        name: '', capitalCity: '', region: '', incomeLevel: '',
+        population: null, gdpPerCapita: null
+      };
+
+      // Each time a call finishes, increment the counter.
+      // When all 3 are done, emit the result with observer.next().
+      const checkIfDone = () => {
+        completedCalls++;
+        if (completedCalls === 3) {
+          observer.next(result);
+          observer.complete();
+        }
+      };
+
+      // Call 1: basic country info (name, capital, region, income level)
+      this.http.get<any[]>(`${this.BASE}/country/${code}?format=json`).subscribe({
+        next: (infoRes) => {
+          const c = infoRes[1]?.[0] ?? {};
+          result.name         = c.name               ?? 'Unknown';
+          result.capitalCity  = c.capitalCity        ?? 'N/A';
+          result.region       = c.region?.value      ?? 'N/A';
+          result.incomeLevel  = c.incomeLevel?.value ?? 'N/A';
+          checkIfDone();
+        },
+        error: (err) => observer.error(err)
+      });
+
+      // Call 2: population
+      this.http.get<any[]>(`${this.BASE}/country/${code}/indicator/SP.POP.TOTL?format=json&mrv=1`).subscribe({
+        next: (popRes) => {
+          result.population = popRes?.[1]?.[0]?.value ?? null;
+          checkIfDone();
+        },
+        error: () => checkIfDone()   // not all countries have population data — that's ok
+      });
+
+      // Call 3: GDP per capita
+      this.http.get<any[]>(`${this.BASE}/country/${code}/indicator/NY.GDP.PCAP.CD?format=json&mrv=1`).subscribe({
+        next: (gdpRes) => {
+          result.gdpPerCapita = gdpRes?.[1]?.[0]?.value ?? null;
+          checkIfDone();
+        },
+        error: () => checkIfDone()   // not all countries have GDP data — that's ok
+      });
+
+    });
+  }
+}
 

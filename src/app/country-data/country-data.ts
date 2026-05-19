@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
-import { CommonModule, DecimalPipe, CurrencyPipe } from '@angular/common';
-import { CountryInfo } from '../services/country.service';
+import { DecimalPipe, CurrencyPipe } from '@angular/common';
+import { CountryInfo } from '../models/country-info.model';
 
 @Component({
   selector: 'app-country-data',
   standalone: true,
-  imports: [CommonModule, DecimalPipe, CurrencyPipe],
+  imports: [DecimalPipe, CurrencyPipe],
   templateUrl: './country-data.html',
   styleUrl: './country-data.css'
 })

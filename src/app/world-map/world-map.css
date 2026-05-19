@@ -1,0 +1,55 @@
+.map-wrapper {
+  position: relative;
+  background-color: #f0f0f0;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.map-label {
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin: 4px 0;
+  min-height: 1.2em;
+}
+
+.map-loading {
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #888;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+}
+
+.map-container {
+  width: 100%;
+  overflow: hidden;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+}
+
+.map-container svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ::ng-deep allows these styles to reach inside the SVG injected via [innerHTML] */
+:host ::ng-deep .map-container svg path {
+  fill: #b0c4de;
+  stroke: #fff;
+  stroke-width: 0.3;
+  cursor: pointer;
+  transition: fill 0.15s;
+}
+
+:host ::ng-deep .map-container svg path:hover {
+  fill: #4a90d9;
+}
+
+:host ::ng-deep .map-container svg path.active {
+  fill: #1a5fa8;
+}
