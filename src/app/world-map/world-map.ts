@@ -36,6 +36,8 @@ export class WorldMap implements OnInit {
     });
   }
 
+  //Using event binding to connect the SVG world map to a mouse click event to
+  //make the svg map interactive
   onMapClick(event: MouseEvent): void {
     const target = event.target as SVGPathElement;
     const code = target?.id;
