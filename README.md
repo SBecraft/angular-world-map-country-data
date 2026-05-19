@@ -10,7 +10,7 @@ This Angular application presents an interactive SVG world map that displays det
 - **OS:**  win32 x64
 - **Angular:**  21.1.4
  
-![Homepage Screenshot](public\D280_Angular_Project_Screenshot.png)
+![Homepage Screenshot](public/D280_Angular_Project_Screenshot.png)
 
 ### Methods
 
