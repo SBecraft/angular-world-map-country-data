@@ -1,7 +1,5 @@
 import { Routes } from '@angular/router';
-import { Homepage } from './homepage/homepage';
-import { CountryData } from './country-data/country-data';
-import { WorldMap } from './world-map/world-map';
+import { HomepageComponent } from './homepage/homepage';
 
 export const routes: Routes = [
   {
@@ -11,8 +9,7 @@ export const routes: Routes = [
   },
   {
     path: 'home',
-    component: Homepage
+    component: HomepageComponent
   }
 ];
-
 
