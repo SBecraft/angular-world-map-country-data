@@ -15,7 +15,7 @@ export class WorldBankApiService {
 
   getCountryData(code: string): Observable<CountryInfo> {
 
-    // Create and return a new Observable — same pattern as your book app
+    // Create and return a new Observable 
     return new Observable(observer => {
 
       // We need to wait for all 3 API calls to finish before emitting the result.
@@ -27,8 +27,9 @@ export class WorldBankApiService {
         population: null, gdpPerCapita: null
       };
 
-      // Each time a call finishes, increment the counter.
-      // When all 3 are done, emit the result with observer.next().
+      // Each time a call finishes, the counter increments.
+      // The counter ensures all 3 calls complete before the data is sent to 
+      // the homepage for display. Display the result with observer.next().
       const checkIfDone = () => {
         completedCalls++;
         if (completedCalls === 3) {
@@ -65,7 +66,7 @@ export class WorldBankApiService {
           result.gdpPerCapita = gdpRes?.[1]?.[0]?.value ?? null;
           checkIfDone();
         },
-        error: () => checkIfDone()   // not all countries have GDP data — that's ok
+        error: () => checkIfDone()   
       });
 
     });
