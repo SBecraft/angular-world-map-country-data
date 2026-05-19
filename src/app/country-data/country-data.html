@@ -1,16 +1,52 @@
-<div class="country-data" *ngIf="country">
+<div class="country-panel">
+  <h2>Country Information</h2>
 
-  <h2>{{ country.name }}</h2>
-
-  <ul>
-    <li><strong>Capital:  </strong> {{ country.capitalCity }}</li>
-    <li><strong>Region:  </strong> {{ country.region.value }}</li>
-    <li><strong>Income Level:  </strong> {{ country.incomeLevel.value }}</li>
-
-    <!-- Your two additional properties -->
-    <li><strong>Latitude:  </strong> {{ country.latitude }}</li>
-    <li><strong>Longitude:  </strong> {{ country.longitude }}</li>
-  </ul>
-
+  @if (loading) {
+    <!--Display loading indicator while country data being fetched by World Bank api service-->
+    <p class="status">Loading...</p>
+  } @else if (error) {
+    <!--Display error message if country data fails to load-->
+    <p class="status error">{{ error }}</p>
+  } @else if (country) {
+    <!--Load all 5 types of country information associated with selected country (country code) to include country name, capital city, region, income level and GDP-->
+    <table class="info-table">
+      <tr>
+        <th>Country Name</th>
+        <td>{{ country.name }}</td>
+      </tr>
+      <tr>
+        <th>Capital City</th>
+        <td>{{ country.capitalCity || 'N/A' }}</td>
+      </tr>
+      <tr>
+        <th>Region</th>
+        <td>{{ country.region }}</td>
+      </tr>
+      <tr>
+        <th>Income Level</th>
+        <td>{{ country.incomeLevel }}</td>
+      </tr>
+      <tr>
+        <th>Population</th>
+        <td>
+          @if (country.population) {
+            {{ country.population | number }}
+          } @else {
+            N/A
+          }
+        </td>
+      </tr>
+      <tr>
+        <th>GDP per Capita</th>
+        <td>
+          @if (country.gdpPerCapita) {
+            {{ country.gdpPerCapita | currency:'USD':'symbol':'1.0-0' }}
+          } @else {
+            N/A
+          }
+        </td>
+      </tr>
+    </table>
+  } 
 </div>
 

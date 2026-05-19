@@ -9,5 +9,5 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('apptwo');
+  protected readonly title = signal('World Map-Country Data');
 }
