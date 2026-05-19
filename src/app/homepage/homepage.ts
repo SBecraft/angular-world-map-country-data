@@ -19,6 +19,9 @@ export class HomepageComponent {
   loading = false;
   error = '';
 
+  //The loadCountry() method triggers the world-bank-api service when a country
+  //is selected and sets a type of data variable for display
+
   loadCountry(code: string): void {
     this.loading = true;
     this.error = '';
