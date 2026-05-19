@@ -1,13 +1,13 @@
 import { Component, signal } from '@angular/core';
-import { } from '@angular/router';
+import { HomeComponent } from "./homepage/homepage";
+
 
 @Component({
-  standalone: true,
   selector: 'app-root',
-  imports: [],
+  standalone: true,
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('World Map-Country Data');
+  protected readonly title = signal('apptwo');
 }
