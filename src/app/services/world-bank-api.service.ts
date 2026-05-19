@@ -4,6 +4,11 @@ import { Observable } from 'rxjs';
 import { CountryInfo } from '../models/country-info.model';
 
 @Injectable({ providedIn: 'root' })
+
+// World Bank API service — uses HttpClient to make 3 separate API calls to the World Bank API
+// using a 2-letter country code to retrieve the country name, capital city, region, 
+// income level, population, and GDP per capita for the selected country
+
 export class WorldBankApiService {
   private http = inject(HttpClient);
   private BASE = 'https://api.worldbank.org/v2';
