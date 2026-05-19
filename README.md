@@ -15,17 +15,17 @@ This Angular application presents an interactive SVG world map that displays det
 ### Methods
 
 **`world-map.ts`**
-- `ngOnInit()` — lifecycle hook, loads the SVG on startup
+- `ngOnInit()` — loads the SVG on startup
 - `onMapClick()` — handles country click
 - `onMapHover()` — handles mouse hover
 - `onMapLeave()` — handles mouse leaving the map
 
 **`homepage.ts`**
-- `loadCountry()` — called when a country is clicked, fetches data from the service
+- `loadCountry()` — called when a country is clicked, fetches data from the World Bank API service
 
 **`world-bank-api.service.ts`**
-- `getCountryData()` — makes the 3 API calls and returns the result
-- `checkIfDone()` — internal helper that counts when all 3 calls finish
+- `getCountryData()` — makes the 3 API calls for country name, capital city, region, income level, population, GDP, and returns the results
+- `checkIfDone()` — counts when all 3 calls finish to display all data at once
 
 **`country-data.ts`**
 - No methods — it only has `@Input()` properties, it just receives and displays data
