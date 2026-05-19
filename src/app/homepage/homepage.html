@@ -3,7 +3,7 @@
 </div>
 
 <div class="layout">
-  <!-- Column 1: Interactive SVG Map only -->
+  <!-- left column: interactive svg world map -->  
   <div class="left-column">
     <p class="map-instruction">Click on a country to view its information.</p>
     <app-world-map (countrySelected)="loadCountry($event)"></app-world-map>
@@ -11,7 +11,7 @@
 
   <div class="divider"></div>
 
-  <!-- Column 2: Static reference map + Country info -->
+  <!-- right column: static reference map and country data section -->  
   <div class="right-column">
 
     <div class="static-map-section">
