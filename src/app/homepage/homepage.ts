@@ -7,13 +7,13 @@ import { CountryData } from '../country-data/country-data';
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [WorldMap, CountryData],
+  imports: [WorldMap, CountryData], // homepage component pulls in child components world-map and country-data
   templateUrl: './homepage.html',
   styleUrl: './homepage.css'
 })
 export class HomepageComponent {
-  private countryService = inject(WorldBankApiService);
-  private cdr = inject(ChangeDetectorRef);
+  private countryService = inject(WorldBankApiService);  // Create class countryService and assign an instance of world-bank-api.services
+  private cdr = inject(ChangeDetectorRef);  // Class cdr assigned instance of change detector to manually trigger change detection
 
   selectedCountry: CountryInfo | null = null;
   loading = false;

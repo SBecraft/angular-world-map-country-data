@@ -37,7 +37,7 @@
   display: block;
 }
 
-/* ::ng-deep allows these styles to reach inside the SVG injected via [innerHTML] */
+/* ::ng-deep lets us style parts of the SVG that Angular normally blocks off */
 :host ::ng-deep .map-container svg path {
   fill: #b0c4de;
   stroke: #fff;

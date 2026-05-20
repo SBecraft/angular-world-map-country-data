@@ -1,3 +1,4 @@
+// Create interface (object class CountryInfo) representing all data fields for a country
 export interface CountryInfo {
   name: string;
   capitalCity: string;
