@@ -27,6 +27,9 @@ This Angular application presents an interactive SVG world map that displays det
 **`country-data.ts`**
 - No methods — it only has `@Input()` properties, it just receives and displays data
 
+<br>
+<br>
+
 
 
 # Installation and Setup
@@ -78,7 +81,7 @@ ng serve
 Or automatically open it in your browser:
 
 ```bash
-ng serve --open    OR  ng serve -o
+ng serve -o
 ```
 
 Then open your browser and go to:
