@@ -7,16 +7,6 @@ This Angular application presents an interactive SVG world map that displays det
 - **OS:**  win32 x64
 - **Angular:**  21.1.4
 
-## 📦 Install Dependencies
-
-This project does **not** include the `node_modules` folder in the repository.
-
-To download all required dependencies and recreate `node_modules`, run:
-
-```bash
-npm install
-
- 
 ![Homepage Screenshot](public/D280_Angular_Project_Screenshot.png)
 
 ### Methods
@@ -36,3 +26,15 @@ npm install
 
 **`country-data.ts`**
 - No methods — it only has `@Input()` properties, it just receives and displays data
+
+
+## 📦 Install Dependencies
+
+This project does **not** include the `node_modules` folder in the repository.
+
+To download all required dependencies and recreate `node_modules`, run:
+
+```bash
+npm install
+
+ 
