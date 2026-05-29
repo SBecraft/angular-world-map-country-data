@@ -1,7 +1,4 @@
-# WESTERN GOVERNORS UNIVERSITY 
-## D280A – JAVASCRIPT PROGRAMMING
-**Student ID**:  011607384
-## World Map - Country Data Angular Project
+# World Map - Country Data Angular Project
 This Angular application presents an interactive SVG world map that displays detailed country information upon selection. When a country is clicked and highlighted, the application connects to the World Bank API to retrieve and display the country's name, capital city, region, income level, population, and GDP per capita. The SVG world map and country data sections are both built as standalone Angular components and are loaded into the homepage component for display. There is only one page in the application, found at the /home URL. The application is compatible with both mouse and trackpad input.
 ### Project Configuration Details
 - **Angular CLI:**  21.1.4
@@ -9,6 +6,16 @@ This Angular application presents an interactive SVG world map that displays det
 - **Package Manager:**  npm 11.8.0
 - **OS:**  win32 x64
 - **Angular:**  21.1.4
+
+## 📦 Install Dependencies
+
+This project does **not** include the `node_modules` folder in the repository.
+
+To download all required dependencies and recreate `node_modules`, run:
+
+```bash
+npm install
+
  
 ![Homepage Screenshot](public/D280_Angular_Project_Screenshot.png)
 
