@@ -49,13 +49,13 @@ This installs all required packages listed in `package.json`.
 
 ### Run the Application
 ```bash
-ng serve
+ng serve -o
 ```
 Then open your browser and go to:
 ```
 http://localhost:4200/home
 ```
 The application will automatically reload if you change any of the source files.
-```
+
 
  
