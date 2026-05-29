@@ -36,6 +36,12 @@ This Angular application presents an interactive SVG world map that displays det
 
 ### Prerequisites
 
+#### Code Editor
+A code editor is required to view and edit the project files. The recommended editor is **Visual Studio Code (VS Code)**:
+```
+https://code.visualstudio.com
+```
+
 #### Install Node.js and npm
 Download and install Node.js from:
 ```
