@@ -28,8 +28,8 @@ This Angular application presents an interactive SVG world map that displays det
 - No methods — it only has `@Input()` properties, it just receives and displays data
 
 
-````markdown
-## Installation and Setup
+
+# Installation and Setup
 
 ### Prerequisites
 
