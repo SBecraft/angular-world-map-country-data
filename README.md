@@ -28,13 +28,34 @@ This Angular application presents an interactive SVG world map that displays det
 - No methods — it only has `@Input()` properties, it just receives and displays data
 
 
-## 📦 Install Dependencies
+## Installation and Setup
 
-This project does **not** include the `node_modules` folder in the repository.
+### Prerequisites
+- Node.js installed on your machine
+- Angular CLI installed globally
 
-To download all required dependencies and recreate `node_modules`, run:
+### Install Angular CLI
+Run this command in your terminal:
+```bash
+npm install -g @angular/cli
+```
 
+### Install Project Dependencies
+Navigate to the project folder in your terminal and run:
 ```bash
 npm install
+```
+This installs all required packages listed in `package.json`.
+
+### Run the Application
+```bash
+ng serve
+```
+Then open your browser and go to:
+```
+http://localhost:4200/home
+```
+The application will automatically reload if you change any of the source files.
+```
 
  
