@@ -28,34 +28,64 @@ This Angular application presents an interactive SVG world map that displays det
 - No methods — it only has `@Input()` properties, it just receives and displays data
 
 
+````markdown
 ## Installation and Setup
 
 ### Prerequisites
-- Node.js installed on your machine
-- Angular CLI installed globally
 
-### Install Angular CLI
+#### Install Node.js and npm
+Download and install Node.js from:
+```
+https://nodejs.org
+```
+npm is included automatically with the Node.js installation.
+
+To verify the installation, run:
+```bash
+node -v
+npm -v
+```
+
+#### Install Angular CLI
 Run this command in your terminal:
+
 ```bash
 npm install -g @angular/cli
 ```
 
+### Clone the Repository
+
+```bash
+git clone https://github.com/SBecraft/angular-world-map-country-data.git
+cd angular-world-map-country-data
+```
+
 ### Install Project Dependencies
-Navigate to the project folder in your terminal and run:
+This project does not include the `node_modules` folder. Navigate to the project folder in your terminal and run:
+
 ```bash
 npm install
 ```
 This installs all required packages listed in `package.json`.
 
 ### Run the Application
+Start the development server:
+
 ```bash
-ng serve -o
+ng serve
 ```
+
+Or automatically open it in your browser:
+
+```bash
+ng serve --open    OR  ng serve -o
+```
+
 Then open your browser and go to:
+
 ```
 http://localhost:4200/home
 ```
 The application will automatically reload if you change any of the source files.
-
 
  
