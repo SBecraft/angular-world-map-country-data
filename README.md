@@ -13,7 +13,8 @@ This Angular application presents an interactive SVG world map that displays det
 
 A full vulnerability assessment for this application has been conducted using GitHub Advanced Security tools including Dependabot and CodeQL. The report and findings are documented in my DevSecOps portfolio repository.
 
-[View Vulnerability Assessment Report](https://github.com/SBecraft/devsecops-portfolio/tree/main/angular-world-map-country-data)
+[View Vulnerability Assessment Report - .docx](https://github.com/SBecraft/devsecops-portfolio/tree/main/angular-world-map-country-data)
+[View Vulnerability Assessment Report - markdown](https://github.com/SBecraft/devsecops-portfolio/tree/main/angular-world-map-country-data)
 
 ![Homepage Screenshot](public/D280_Angular_Project_Screenshot.png)
 
