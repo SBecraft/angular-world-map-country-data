@@ -6,8 +6,8 @@ This Angular application presents an interactive SVG world map that displays det
 - **Package Manager:**  npm 11.8.0
 - **OS:**  win32 x64
 - **Angular:**  21.1.4
-
-## Security
+<br>
+### Security
 
 A full vulnerability assessment for this application has been conducted using GitHub Advanced Security tools including Dependabot and CodeQL. The report and findings are documented in my DevSecOps portfolio repository.
 
